@@ -3,9 +3,9 @@
 import { ClientLogos } from '@/components/ClientLogos'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
+import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { TestimonialFeatured } from '@/components/TestimonialFeatured'
-import Link from 'next/link'
 
 export default function Home() {
   return (

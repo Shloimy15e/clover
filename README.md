@@ -62,10 +62,17 @@ clover/
 ├── app/                    # Next.js App Router
 │   ├── layout.tsx         # Root layout with fonts and metadata
 │   ├── page.tsx           # Home page
+│   ├── about/
+│   │   └── page.tsx       # About page
+│   ├── services/
+│   │   └── page.tsx       # Services page
+│   ├── contact/
+│   │   └── page.tsx       # Contact page
 │   └── globals.css        # Global styles and Tailwind
 ├── components/            # React components
 │   ├── Navbar.tsx        # Navigation bar
 │   ├── Hero.tsx          # Hero section
+│   ├── ClientLogos.tsx   # Client logos section
 │   ├── Problems.tsx      # Problem statements
 │   ├── ValueProp.tsx     # Value proposition
 │   ├── Services.tsx      # Services grid

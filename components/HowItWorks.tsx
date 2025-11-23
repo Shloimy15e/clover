@@ -1,7 +1,8 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
 import { Coffee, FileCheck, Sparkles, TrendingUp } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+
 import { useRef } from 'react'
 
 export function HowItWorks() {
