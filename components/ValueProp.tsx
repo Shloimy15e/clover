@@ -66,7 +66,7 @@ export function ValueProp() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Link href="#contact" className="btn btn-primary btn-large group">
+            <Link href="/contact" className="btn btn-primary btn-large group">
               Book a Call
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>

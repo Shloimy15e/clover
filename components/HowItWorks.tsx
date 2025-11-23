@@ -1,9 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Coffee, FileCheck, Sparkles, TrendingUp } from 'lucide-react'
+import { useRef } from 'react'
 
 export function HowItWorks() {
   const ref = useRef(null)
@@ -14,19 +13,19 @@ export function HowItWorks() {
       number: 1,
       icon: Coffee,
       title: 'Get-to-Know-You Consult',
-      description: 'Because we don't take just any clients, we'll meet to see if we're a good fit. We'll discuss the business worries that tie up your time and keep you up at night. Coffee's on us.',
+      description: 'Because we don\'t take just any clients, we\'ll meet to see if we\'re a good fit. We\'ll discuss the business worries that tie up your time and keep you up at night. Coffee\'s on us.',
     },
     {
       number: 2,
       icon: FileCheck,
       title: 'Welcome Aboard',
-      description: 'We'll sign a short agreement to clarify what we're taking off your shoulders. (Pretty much everything).',
+      description: 'We\'ll sign a short agreement to clarify what we\'re taking off your shoulders. (Pretty much everything).',
     },
     {
       number: 3,
       icon: Sparkles,
       title: 'Clean Up',
-      description: 'We roll up our sleeves and whip your books into shape. We'll review your records, take care of urgent issues, compile our recommended changes, create a custom management process, collect your missing payments, and choose Key Performance Indicators so we can track progress.',
+      description: 'We roll up our sleeves and whip your books into shape. We\'ll review your records, take care of urgent issues, compile our recommended changes, create a custom management process, collect your missing payments, and choose Key Performance Indicators so we can track progress.',
     },
     {
       number: 4,

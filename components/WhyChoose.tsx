@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { Briefcase, GraduationCap, Handshake, Phone, Zap } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+
 import { useRef } from 'react'
-import { Zap, Handshake, GraduationCap, Phone, Briefcase } from 'lucide-react'
 
 export function WhyChoose() {
   const ref = useRef(null)
@@ -12,33 +12,33 @@ export function WhyChoose() {
   const features = [
     {
       icon: Zap,
-      title: 'We're Proactive',
-      quote: '"They're working on a solution before I know there's a problem"',
-      description: 'We proactively look for and plug leaks in your business. If we see a potential issue with your cash flow, your vendor, or your software, we'll tell you and recommend solutions.',
+      title: 'We\'re Proactive',
+      quote: '"They\'re working on a solution before I know there\'s a problem"',
+      description: 'We proactively look for and plug leaks in your business. If we see a potential issue with your cash flow, your vendor, or your software, we\'ll tell you and recommend solutions.',
     },
     {
       icon: Handshake,
-      title: 'We're Relationship Focused',
-      quote: '"I feel like I'm their only client"',
-      description: 'You're not just another account on the conveyor belt. We build warm long-term relationships with each client. Our goal: make each client feel like they're the only one.',
+      title: 'We\'re Relationship Focused',
+      quote: '"I feel like I\'m their only client"',
+      description: 'You\'re not just another account on the conveyor belt. We build warm long-term relationships with each client. Our goal: make each client feel like they\'re the only one.',
     },
     {
       icon: GraduationCap,
-      title: 'We're Specialists',
-      quote: '"They're diligent, reliable, and they really know their stuff"',
-      description: 'Beside our QuickBooks certifications, we're diligent and detail-oriented. Our expert financial advice saves clients hundreds of thousands of dollars.',
+      title: 'We\'re Specialists',
+      quote: '"They\'re diligent, reliable, and they really know their stuff"',
+      description: 'Beside our QuickBooks certifications, we\'re diligent and detail-oriented. Our expert financial advice saves clients hundreds of thousands of dollars.',
     },
     {
       icon: Phone,
-      title: 'We're Available',
-      quote: '"They're available 24/6, no games, no politics"',
-      description: 'We understand that issues come up outside working hours. That's why you can call or message David on his personal cell. We're here for you anytime as you grow your business.',
+      title: 'We\'re Available',
+      quote: '"They\'re available 24/6, no games, no politics"',
+      description: 'We understand that issues come up outside working hours. That\'s why you can call or message David on his personal cell. We\'re here for you anytime as you grow your business.',
     },
     {
       icon: Briefcase,
-      title: 'We're More than Bookkeepers',
-      quote: '"I know they'll help with anything I need"',
-      description: 'We're your trusted advisors. We answer your every question and walk you through the process of building and growing a profitable business.',
+      title: 'We\'re More than Bookkeepers',
+      quote: '"I know they\'ll help with anything I need"',
+      description: 'We\'re your trusted advisors. We answer your every question and walk you through the process of building and growing a profitable business.',
       wide: true,
     },
   ]

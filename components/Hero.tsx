@@ -95,11 +95,11 @@ export function Hero() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
-            <Link href="#contact" className="btn btn-primary btn-large group">
+            <Link href="/contact" className="btn btn-primary btn-large group">
               Book a Call
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="#services" className="btn btn-secondary btn-large">
+            <Link href="/services" className="btn btn-secondary btn-large">
               Learn More
             </Link>
           </motion.div>

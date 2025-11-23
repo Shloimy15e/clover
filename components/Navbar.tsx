@@ -18,11 +18,10 @@ export function Navbar() {
   }, [])
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#testimonials', label: 'Testimonials' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (
@@ -37,7 +36,7 @@ export function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Clover className="w-10 h-10 text-primary-600 group-hover:scale-110 transition-transform duration-300" />
               <div className="absolute inset-0 bg-primary-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-full" />
@@ -61,7 +60,7 @@ export function Navbar() {
               </li>
             ))}
             <li>
-              <Link href="#contact" className="btn btn-primary">
+              <Link href="/contact" className="btn btn-primary">
                 Book a Call
               </Link>
             </li>
@@ -111,7 +110,7 @@ export function Navbar() {
                 transition={{ delay: navItems.length * 0.1 }}
               >
                 <Link
-                  href="#contact"
+                  href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="btn btn-primary w-full"
                 >

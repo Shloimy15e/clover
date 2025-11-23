@@ -1,6 +1,5 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
 import {
     ArrowRight,
     BarChart3,
@@ -21,6 +20,8 @@ import {
     Users,
     Wallet
 } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+
 import Link from 'next/link'
 import { useRef } from 'react'
 
@@ -96,7 +97,7 @@ export function Services() {
           <p className="text-lg text-gray-700 mb-6">
             Need something you don't see here? Give us a call and we'll see if we can help you!
           </p>
-          <Link href="#contact" className="btn btn-primary group">
+          <Link href="/contact" className="btn btn-primary group">
             Book a Call
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>

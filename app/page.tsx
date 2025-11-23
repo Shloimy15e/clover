@@ -1,16 +1,11 @@
 'use client'
 
-import { Navbar } from '@/components/Navbar'
-import { Hero } from '@/components/Hero'
-import { Problems } from '@/components/Problems'
-import { ValueProp } from '@/components/ValueProp'
-import { TestimonialFeatured } from '@/components/TestimonialFeatured'
-import { Services } from '@/components/Services'
-import { WhyChoose } from '@/components/WhyChoose'
-import { HowItWorks } from '@/components/HowItWorks'
-import { BeforeAfter } from '@/components/BeforeAfter'
-import { Contact } from '@/components/Contact'
+import { ClientLogos } from '@/components/ClientLogos'
 import { Footer } from '@/components/Footer'
+import { Hero } from '@/components/Hero'
+import { Navbar } from '@/components/Navbar'
+import { TestimonialFeatured } from '@/components/TestimonialFeatured'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -18,38 +13,47 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Problems />
-        <ValueProp />
+        <ClientLogos />
+        
+        {/* Quick Overview Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <Link href="/about" className="group">
+                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">About Us</h3>
+                  <p className="text-gray-600 mb-4">Learn why 98% of our clients report increased profits and high satisfaction.</p>
+                  <span className="text-primary-600 font-semibold group-hover:underline">Learn More →</span>
+                </div>
+              </Link>
+              
+              <Link href="/services" className="group">
+                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Our Services</h3>
+                  <p className="text-gray-600 mb-4">From bookkeeping to tax prep, we handle everything for your business.</p>
+                  <span className="text-primary-600 font-semibold group-hover:underline">View Services →</span>
+                </div>
+              </Link>
+              
+              <Link href="/contact" className="group">
+                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Get Started</h3>
+                  <p className="text-gray-600 mb-4">Ready to free yourself from bookkeeping? Let's talk.</p>
+                  <span className="text-primary-600 font-semibold group-hover:underline">Contact Us →</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <TestimonialFeatured
           badge="Client Success Story"
-          title=""Saved me thousands""
+          title="&quot;Saved me thousands&quot;"
           quote="They've saved me thousands of dollars, no question. I used to be so busy with invoices and estimates. I tried a different bookkeeping firm but was frustrated by the lack of communication. With Clover, I know I'm not working for nothing — I'm not losing millions down some big hole. I can do what I'm good at. Because they're very diligent. They don't do the work to cross it off their list. They really care to make sure I'm making money and not losing money."
           authorName="Moty Deblinger"
           authorTitle="Founder & CEO at W Networking"
           authorInitial="M"
         />
-        <Services />
-        <WhyChoose />
-        <TestimonialFeatured
-          badge="Client Success Story"
-          title=""Clover takes the headache of financials off my head""
-          quote="When I opened my business, I knew I needed someone to do the bookkeeping. Speaking to clients, field work — that's where I'm happy. I need the numbers part off my head. So I sat down with David and was impressed by his thoroughness. He did everything — he took the headache of financials off my head. So I could focus on bringing in new clients, expanding my knowledge, and building relationships. He saves me over 4 hours every job. I have clarity and focus for work because I know I don't need to worry at all about my finances."
-          authorName="Heshel Danciger"
-          authorTitle="CEO & Founder, Wiretex LVS Solutions"
-          authorInitial="H"
-          variant="alt"
-        />
-        <HowItWorks />
-        <TestimonialFeatured
-          badge="Client Success Story"
-          title=""We've grown since working with Clover""
-          quote="My business has definitely grown since working with Clover. We can move faster to satisfy clients, we can take on more projects, bigger projects. Because someone reliable is taking care of the books. I recommend them 100% — no, 101%. Because they do everything they say, and they take responsibility for everything."
-          authorName="Ari Braun"
-          authorTitle="Founder & CEO of Home Worx"
-          authorInitial="A"
-        />
-        <BeforeAfter />
-        <Contact />
       </main>
       <Footer />
     </>

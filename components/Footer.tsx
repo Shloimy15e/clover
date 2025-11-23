@@ -7,10 +7,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (
@@ -19,7 +19,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <Link href="#home" className="flex items-center gap-3 mb-4 group">
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
               <Clover className="w-10 h-10 text-primary-400 group-hover:scale-110 transition-transform duration-300" />
               <span className="text-2xl font-bold">Clover Consulting</span>
             </Link>
