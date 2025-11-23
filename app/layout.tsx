@@ -1,6 +1,23 @@
 import './globals.css'
 
+import { Inter, Playfair_Display } from 'next/font/google'
+
 import type { Metadata } from 'next'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+})
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-playfair',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+})
 
 export const metadata: Metadata = {
   title: 'Clover Consulting - Expert Bookkeeping & Financial Management',
@@ -22,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased">
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

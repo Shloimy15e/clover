@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-playfair: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  }
+
   html {
     @apply scroll-smooth;
   }
