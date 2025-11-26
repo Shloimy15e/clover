@@ -1,10 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { CheckCircle2, ArrowRight } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 export function ValueProp() {
   const ref = useRef(null)

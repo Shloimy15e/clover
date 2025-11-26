@@ -1,18 +1,18 @@
 'use client'
 
-import { Navbar } from '@/components/Navbar'
-import { Problems } from '@/components/Problems'
-import { ValueProp } from '@/components/ValueProp'
-import { TestimonialFeatured } from '@/components/TestimonialFeatured'
-import { WhyChoose } from '@/components/WhyChoose'
+import { AboutHero } from '@/components/AboutHero'
 import { Footer } from '@/components/Footer'
+import { Navbar } from '@/components/Navbar'
+import { TestimonialFeatured } from '@/components/TestimonialFeatured'
+import { ValueProp } from '@/components/ValueProp'
+import { WhyChoose } from '@/components/WhyChoose'
 
 export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-20">
-        <Problems />
+      <main>
+        <AboutHero />
         <ValueProp />
         <TestimonialFeatured
           badge="Client Success Story"

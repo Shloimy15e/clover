@@ -1,6 +1,8 @@
 'use client'
 
-import { Clover, Phone, Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
+
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Footer() {
@@ -20,7 +22,13 @@ export function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <Clover className="w-10 h-10 text-primary-400 group-hover:scale-110 transition-transform duration-300" />
+              <Image
+                src="/images/logo2.png"
+                alt="Clover Consulting"
+                width={40}
+                height={40}
+                className="group-hover:scale-110 transition-transform duration-300"
+              />
               <span className="text-2xl font-bold">Clover Consulting</span>
             </Link>
             <p className="text-gray-400 leading-relaxed mb-6">

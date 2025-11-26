@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
+import Image from 'next/image'
 import { useRef, useState } from 'react'
-import { Phone, MessageCircle, Mail, MapPin, Send } from 'lucide-react'
 
 export function Contact() {
   const ref = useRef(null)
@@ -39,9 +39,15 @@ export function Contact() {
     },
     {
       icon: MessageCircle,
-      title: 'Text/WhatsApp',
+      title: 'Text',
       content: '845-533-6700',
-      href: 'tel:845-533-6700',
+      href: 'sms:845-533-6700',
+    },
+    {
+      icon: MessageCircle,
+      title: 'WhatsApp',
+      content: '845-533-6700',
+      href: 'https://wa.me/18455336700',
     },
     {
       icon: Mail,
@@ -76,13 +82,27 @@ export function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
+          {/* Left side - Contact info with subtle decorative graphic */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
           >
-            <div className="space-y-6">
+            {/* Subtle Decorative Graphic - positioned as background accent */}
+            <div className="absolute -top-8 -left-8 w-48 h-48 opacity-30 pointer-events-none">
+              <Image
+                src="/images/last-section.png"
+                alt=""
+                width={200}
+                height={200}
+                className="w-full h-full object-contain"
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Contact Methods */}
+            <div className="space-y-4 relative z-10">
               {contactMethods.map((method, index) => (
                 <motion.a
                   key={index}
@@ -93,14 +113,14 @@ export function Contact() {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-                    <method.icon className="w-6 h-6 text-white" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
+                    <method.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">{method.title}</h4>
-                    <p className="text-gray-600">{method.content}</p>
+                    <h4 className="font-bold text-gray-900 text-sm">{method.title}</h4>
+                    <p className="text-gray-600 text-sm">{method.content}</p>
                   </div>
                 </motion.a>
               ))}

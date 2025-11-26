@@ -1,57 +1,139 @@
 'use client'
 
-import {
-    ArrowRight,
-    BarChart3,
-    Briefcase,
-    CreditCard,
-    DollarSign,
-    FileCheck,
-    FileText,
-    Keyboard,
-    Lightbulb,
-    RefreshCw,
-    Rocket,
-    Scale,
-    Search,
-    Shield,
-    Tag,
-    Target,
-    Users,
-    Wallet
-} from 'lucide-react'
 import { motion, useInView } from 'framer-motion'
+import {
+  ArrowRight,
+  BarChart3,
+  Briefcase,
+  CreditCard,
+  DollarSign,
+  FileCheck,
+  FileText,
+  Keyboard,
+  Lightbulb,
+  RefreshCw,
+  Rocket,
+  Scale,
+  Search,
+  Shield,
+  Tag,
+  Target,
+  Users,
+  Wallet,
+} from 'lucide-react'
 
 import Link from 'next/link'
 import { useRef } from 'react'
 
 export function Services() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const services = [
-    { icon: FileText, label: 'QuickBooks Setup & Restructuring' },
-    { icon: FileCheck, label: 'Invoicing' },
-    { icon: DollarSign, label: 'Cash Flow' },
-    { icon: BarChart3, label: 'Reports & Tracking' },
-    { icon: Tag, label: 'Pricing Structure' },
-    { icon: Scale, label: 'Legal Advice' },
-    { icon: Keyboard, label: 'Data Entry' },
-    { icon: Users, label: 'Payroll' },
-    { icon: RefreshCw, label: 'Reconciliation' },
-    { icon: Search, label: 'Expense Audits' },
-    { icon: Rocket, label: 'Startup Coaching' },
-    { icon: Lightbulb, label: 'Business Idea Execution' },
-    { icon: CreditCard, label: 'Payment Processing' },
-    { icon: FileCheck, label: 'Tax Prep' },
-    { icon: Wallet, label: 'Payables & Receivables' },
-    { icon: Target, label: 'Consulting' },
-    { icon: Briefcase, label: 'Hiring' },
-    { icon: Shield, label: 'Business Insurance' },
+    {
+      icon: FileText,
+      label: 'QuickBooks Setup & Restructuring',
+      description: 'Expert setup and optimization of your QuickBooks system for maximum efficiency',
+    },
+    {
+      icon: FileCheck,
+      label: 'Invoicing',
+      description: 'Professional invoice creation, tracking, and follow-up to ensure timely payments',
+    },
+    {
+      icon: DollarSign,
+      label: 'Cash Flow Management',
+      description: 'Monitor and optimize your cash flow to keep your business running smoothly',
+    },
+    {
+      icon: BarChart3,
+      label: 'Reports & Tracking',
+      description: 'Detailed financial reports and KPIs to understand your business performance',
+    },
+    {
+      icon: Tag,
+      label: 'Pricing Structure',
+      description: 'Strategic pricing advice to maximize profitability while staying competitive',
+    },
+    {
+      icon: Scale,
+      label: 'Legal Advice',
+      description: 'Guidance on financial compliance and business structure decisions',
+    },
+    {
+      icon: Keyboard,
+      label: 'Data Entry',
+      description: 'Accurate and timely entry of all your financial transactions and records',
+    },
+    {
+      icon: Users,
+      label: 'Payroll',
+      description: 'Complete payroll management including taxes, benefits, and compliance',
+    },
+    {
+      icon: RefreshCw,
+      label: 'Reconciliation',
+      description: 'Regular bank and account reconciliation to catch discrepancies early',
+    },
+    {
+      icon: Search,
+      label: 'Expense Audits',
+      description: 'Thorough review of expenses to identify savings and eliminate waste',
+    },
+    {
+      icon: Rocket,
+      label: 'Startup Coaching',
+      description: 'Guidance for new businesses on financial setup and best practices',
+    },
+    {
+      icon: Lightbulb,
+      label: 'Business Idea Execution',
+      description: 'Turn your business ideas into reality with our strategic planning support',
+    },
+    {
+      icon: CreditCard,
+      label: 'Payment Processing',
+      description: 'Set up and manage efficient payment systems for your customers',
+    },
+    {
+      icon: FileCheck,
+      label: 'Tax Prep',
+      description: 'Year-round tax preparation and planning to minimize your tax burden',
+    },
+    {
+      icon: Wallet,
+      label: 'Payables & Receivables',
+      description: 'Manage what you owe and what you\'re owed for optimal cash position',
+    },
+    {
+      icon: Target,
+      label: 'Consulting',
+      description: 'Strategic business advice to help you make informed financial decisions',
+    },
+    {
+      icon: Briefcase,
+      label: 'Hiring Support',
+      description: 'Financial guidance on hiring decisions, costs, and employee management',
+    },
+    {
+      icon: Shield,
+      label: 'Business Insurance',
+      description: 'Advice on protecting your business with the right insurance coverage',
+    },
+  ]
+
+  // Split services into rows of varying sizes for alternating animation
+  const rows = [
+    services.slice(0, 3),
+    services.slice(3, 6),
+    services.slice(6, 9),
+    services.slice(9, 12),
+    services.slice(12, 15),
+    services.slice(15, 18),
   ]
 
   return (
-    <section id="services" className="section-padding bg-white">
+    <section id="services" className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -64,26 +146,36 @@ export function Services() {
             Clover takes care of… <span className="gradient-text">everything</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive bookkeeping and financial services for your business
+            Comprehensive bookkeeping and financial services tailored to your business needs
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => (
+        <div className="space-y-6 mb-12">
+          {rows.map((row, rowIndex) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              key={rowIndex}
+              initial={{ opacity: 0, x: rowIndex % 2 === 0 ? -100 : 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, delay: rowIndex * 0.15, ease: 'easeOut' }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
             >
-              <div className="flex flex-col items-center text-center gap-3">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg flex items-center justify-center">
-                  <service.icon className="w-7 h-7 text-primary-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900">{service.label}</h4>
-              </div>
+              {row.map((service, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="group bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg flex items-center justify-center group-hover:from-primary-500 group-hover:to-primary-600 transition-all duration-300">
+                      <service.icon className="w-6 h-6 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 mb-1">{service.label}</h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           ))}
         </div>
@@ -91,7 +183,7 @@ export function Services() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 1 }}
           className="text-center bg-gradient-to-r from-primary-50 to-accent-50 p-8 rounded-2xl"
         >
           <p className="text-lg text-gray-700 mb-6">

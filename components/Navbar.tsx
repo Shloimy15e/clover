@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Clover } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,16 +35,19 @@ export function Navbar() {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-fit py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <Clover className="w-10 h-10 text-primary-600 group-hover:scale-110 transition-transform duration-300" />
+              <Image
+                src="/images/logo2.png"
+                alt="Clover Consulting"
+                width={130}
+                height={130}
+                className="group-hover:scale-110 transition-transform duration-300"
+              />
               <div className="absolute inset-0 bg-primary-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-full" />
             </div>
-            <span className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-              Clover Consulting
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
