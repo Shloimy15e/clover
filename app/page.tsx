@@ -3,24 +3,65 @@
 import { ClientLogos } from '@/components/ClientLogos'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
-import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { TestimonialFeatured } from '@/components/TestimonialFeatured'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <>
+    <div className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50">
+      {/* Animated Background Shapes - spans entire page */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute -top-20 -left-20 w-96 h-96 bg-primary-200 rounded-full opacity-20 blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          className="absolute top-1/2 -right-20 w-96 h-96 bg-accent-200 rounded-full opacity-20 blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-primary-300 rounded-full opacity-20 blur-3xl"
+        />
+      </div>
+
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <ClientLogos />
         
         {/* Quick Overview Section */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-transparent">
           <div className="container-custom">
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Link href="/about" className="group">
-                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-full border border-white/50">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">About Us</h3>
                   <p className="text-gray-600 mb-4">Learn why 98% of our clients report increased profits and high satisfaction.</p>
                   <span className="text-primary-600 font-semibold group-hover:underline">Learn More →</span>
@@ -28,7 +69,7 @@ export default function Home() {
               </Link>
               
               <Link href="/services" className="group">
-                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-full border border-white/50">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Our Services</h3>
                   <p className="text-gray-600 mb-4">From bookkeeping to tax prep, we handle everything for your business.</p>
                   <span className="text-primary-600 font-semibold group-hover:underline">View Services →</span>
@@ -36,7 +77,7 @@ export default function Home() {
               </Link>
               
               <Link href="/contact" className="group">
-                <div className="bg-gradient-to-br from-primary-50 to-accent-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 h-full">
+                <div className="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-full border border-white/50">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">Get Started</h3>
                   <p className="text-gray-600 mb-4">Ready to free yourself from bookkeeping? Let's talk.</p>
                   <span className="text-primary-600 font-semibold group-hover:underline">Contact Us →</span>
@@ -56,7 +97,7 @@ export default function Home() {
         />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

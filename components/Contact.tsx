@@ -1,34 +1,15 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
+
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
+import { InlineWidget } from 'react-calendly'
 
 export function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({ name: '', email: '', phone: '', message: '' })
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
 
   const contactMethods = [
     {
@@ -77,7 +58,7 @@ export function Contact() {
             Let's partner to <span className="gradient-text">grow your business</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to free yourself from the burden of bookkeeping? Get in touch and let's discuss how we can help.
+            Ready to free yourself from the burden of bookkeeping? Book a free consultation and let's discuss how we can help.
           </p>
         </motion.div>
 
@@ -127,88 +108,27 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Calendly Integration */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all outline-none"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all outline-none"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all outline-none"
-                    placeholder="(123) 456-7890"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all outline-none resize-none"
-                    placeholder="Tell us about your business..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full btn btn-primary btn-large group"
-                >
-                  Send Message
-                  <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-              </form>
+            <div className="bg-white p-4 rounded-2xl shadow-xl overflow-hidden">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 px-4 pt-2">Book a Free Consultation</h3>
+              {/* Replace the URL with your actual Calendly link */}
+              <InlineWidget
+                url="https://calendly.com/clovercanhelp/15min"
+                styles={{ height: '600px', minWidth: '320px' }}
+                pageSettings={{
+                  backgroundColor: 'ffffff',
+                  hideEventTypeDetails: false,
+                  hideLandingPageDetails: false,
+                  primaryColor: '138a40',
+                  textColor: '1f2937',
+                  hideGdprBanner: true,
+                }}
+              />
             </div>
           </motion.div>
         </div>

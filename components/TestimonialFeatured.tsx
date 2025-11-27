@@ -1,9 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Quote } from 'lucide-react'
+import { useRef } from 'react'
 
 interface TestimonialFeaturedProps {
   badge: string
@@ -27,10 +26,8 @@ export function TestimonialFeatured({
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
-  const bgColor = variant === 'alt' ? 'bg-gradient-to-br from-accent-50 to-primary-50' : 'bg-gray-50'
-
   return (
-    <section id="testimonials" className={`section-padding ${bgColor}`}>
+    <section id="testimonials" className="section-padding bg-transparent">
       <div className="container-custom">
         <motion.div
           ref={ref}
