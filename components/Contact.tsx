@@ -118,7 +118,7 @@ export function Contact() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 px-4 pt-2">Book a Free Consultation</h3>
               {/* Replace the URL with your actual Calendly link */}
               <InlineWidget
-                url="https://calendly.com/clovercanhelp/15min"
+                url="https://calendly.com/clovercanhelp/"
                 styles={{ height: '600px', minWidth: '320px' }}
                 pageSettings={{
                   backgroundColor: 'ffffff',
@@ -126,7 +126,7 @@ export function Contact() {
                   hideLandingPageDetails: false,
                   primaryColor: '138a40',
                   textColor: '1f2937',
-                  hideGdprBanner: true,
+                  hideGdprBanner: false,
                 }}
               />
             </div>

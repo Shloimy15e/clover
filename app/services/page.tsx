@@ -1,10 +1,10 @@
 'use client'
 
+import { Footer } from '@/components/Footer'
+import { HowItWorks } from '@/components/HowItWorks'
 import { Navbar } from '@/components/Navbar'
 import { Services } from '@/components/Services'
-import { HowItWorks } from '@/components/HowItWorks'
 import { TestimonialFeatured } from '@/components/TestimonialFeatured'
-import { Footer } from '@/components/Footer'
 
 export default function ServicesPage() {
   return (
